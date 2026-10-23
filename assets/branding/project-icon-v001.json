@@ -1,0 +1,33 @@
+{
+  "asset": "project-icon",
+  "version": "v001",
+  "source": "skills/douyin-build/assets/brand-lockup.svg",
+  "source_sha256": "1c8b53f4654bf3cde1243e792fdb058477a70436c913aabcc6c5c8897dd17fae",
+  "source_element": "brand-symbol",
+  "method": "native SVG extraction and rsvg-convert PNG export",
+  "created_at": "2026-10-18T13:50:30+00:00",
+  "width": 1024,
+  "height": 1024,
+  "artifacts": [
+    {
+      "path": "assets/branding/project-icon-v001.svg",
+      "sha256": "254acd20dc3b757f9fe58fd651309eb0ca0b749f7fc2dfed38a0abaf69ab4631",
+      "transparent": false
+    },
+    {
+      "path": "assets/branding/project-icon-v001.png",
+      "sha256": "fc5f8510290ef9f64f0069ec90526fc8f74af8274f9d6e46fa0f80c3882d08c9",
+      "transparent": false
+    },
+    {
+      "path": "assets/branding/project-icon-v001-transparent.svg",
+      "sha256": "4a35d1afa7dc7d091c9bd58122aa58fa513d93d8d3e85e0274e19e30ca99bf79",
+      "transparent": true
+    },
+    {
+      "path": "assets/branding/project-icon-v001-transparent.png",
+      "sha256": "0493fee85c36d92507e61b57d36d52f8c0a824066edfbb32210454c00a96e461",
+      "transparent": true
+    }
+  ]
+}

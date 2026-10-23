@@ -1,0 +1,37 @@
+# Local runtime content; preserve directory placeholders.
+/storage/sources/*
+!/storage/sources/.gitkeep
+/storage/builds/*
+!/storage/builds/.gitkeep
+/storage/state/*
+!/storage/state/.gitkeep
+
+# Generated videos in any directory (including uppercase extensions).
+*.[mM][pP]4
+*.[mM][oO][vV]
+*.[wW][eE][bB][mM]
+*.[mM][kK][vV]
+*.[aA][vV][iI]
+*.[mM]4[vV]
+*.[mM][pP][eE][gG]
+*.[mM][pP][gG]
+*.[wW][mM][vV]
+*.[fF][lL][vV]
+*.3[gG][pP]
+*.[oO][gG][vV]
+*.[mM][tT][sS]
+*.[mM]2[tT][sS]
+
+# Local credentials and system files.
+.env
+.env.*
+!.env.example
+.DS_Store
+
+# Python script and test caches.
+__pycache__/
+*.py[cod]
+
+# Local browser verification artifacts.
+.playwright-cli/
+/output/playwright/

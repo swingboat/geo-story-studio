@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Source manifest",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "source_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]{0,63}$"
+    },
+    "source_version": {
+      "type": "string",
+      "pattern": "^v[0-9]{3,}$"
+    },
+    "input_path": {
+      "type": "string"
+    },
+    "snapshot_path": {
+      "type": "string"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "size_bytes": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "registered_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "title": {
+      "type": "string"
+    },
+    "document_title": {
+      "type": "string"
+    },
+    "curriculum": {
+      "type": "object",
+      "properties": {
+        "book": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "book"
+      ],
+      "additionalProperties": false
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "availability": {
+            "enum": [
+              "remote",
+              "not_copied"
+            ]
+          },
+          "locator": {
+            "type": "object",
+            "properties": {
+              "start_line": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "end_line": {
+                "type": "integer",
+                "minimum": 1
+              }
+            },
+            "required": [
+              "start_line",
+              "end_line"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "url",
+          "kind",
+          "availability",
+          "locator"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "snapshot_complete": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "schema_version",
+    "source_id",
+    "source_version",
+    "input_path",
+    "snapshot_path",
+    "sha256",
+    "size_bytes",
+    "registered_at",
+    "title",
+    "document_title",
+    "curriculum",
+    "dependencies",
+    "snapshot_complete"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "source_ref": {
+      "type": "object",
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]{0,63}$"
+        },
+        "source_version": {
+          "type": "string",
+          "pattern": "^v[0-9]{3,}$"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "snapshot_path": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_id",
+        "source_version",
+        "sha256",
+        "snapshot_path"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "asset": "project-logo-full",
+  "version": "v001",
+  "source": "skills/douyin-build/assets/brand-lockup.svg",
+  "source_sha256": "1c8b53f4654bf3cde1243e792fdb058477a70436c913aabcc6c5c8897dd17fae",
+  "method": "native SVG export with the complete symbol and Chinese/English wordmark",
+  "created_at": "2026-10-18T13:54:01+00:00",
+  "width": 2400,
+  "height": 720,
+  "artifacts": [
+    {
+      "path": "assets/branding/project-logo-v001.svg",
+      "sha256": "231d82704a1810178c8898011520c20362a419dbeb844719efa98885f7dcfd36",
+      "transparent": false
+    },
+    {
+      "path": "assets/branding/project-logo-v001.png",
+      "sha256": "99f946ff382bb23d1752e69f647fd871579092aa6896e6836901d06f8e8ddcca",
+      "transparent": false
+    },
+    {
+      "path": "assets/branding/project-logo-v001-transparent.svg",
+      "sha256": "633345a17a2c19bf6db51aabe958abc41f83ccbf0f1be3e0a63a557c20bd38e9",
+      "transparent": true
+    },
+    {
+      "path": "assets/branding/project-logo-v001-transparent.png",
+      "sha256": "3071b98be4886c9f46f4a02d31e1a6d06f0d5fe56f2882f442db5748ddcfc912",
+      "transparent": true
+    }
+  ]
+}

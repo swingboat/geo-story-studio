@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "id": "toutiao-article",
+  "version": "0.1.0",
+  "platform": "toutiao",
+  "execution": "local_assisted",
+  "steps": [
+    {"id": "verify_review", "kind": "validation"},
+    {"id": "compose", "kind": "skill", "skill": "toutiao-build"},
+    {"id": "export_assets", "kind": "render"},
+    {"id": "preview", "kind": "local_preview"},
+    {"id": "approve", "kind": "human_approval", "required": true},
+    {"id": "publish", "kind": "external_publish", "skill": "toutiao-publish", "implemented": false, "requires": "approve"}
+  ]
+}

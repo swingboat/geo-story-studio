@@ -1,0 +1,360 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Scientific material scoped for platform builds",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "source_ref": {
+      "$ref": "source-manifest.schema.json#/$defs/source_ref"
+    },
+    "extraction_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "review_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reviewed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "enum": [
+        "completed_with_open_items",
+        "reviewed"
+      ]
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "review_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "content_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "knowledge_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "skill": {
+          "$ref": "review.schema.json#/$defs/skill"
+        },
+        "script_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "review_sha256",
+        "content_sha256",
+        "knowledge_sha256",
+        "skill",
+        "script_sha256"
+      ],
+      "additionalProperties": false
+    },
+    "requires_publication_approval": {
+      "const": true
+    },
+    "knowledge_points": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "blocked",
+              "partially_reviewed",
+              "reviewed"
+            ]
+          },
+          "statements": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "recommended_text": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "uniqueItems": true,
+                  "minItems": 1
+                },
+                "scope": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "constraints": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "uniqueItems": true
+                }
+              },
+              "required": [
+                "id",
+                "recommended_text",
+                "evidence_ids",
+                "scope",
+                "constraints"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "unresolved_claim_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "status",
+          "statements",
+          "unresolved_claim_ids"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "topics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scope": {
+            "type": "string",
+            "minLength": 1
+          },
+          "readiness": {
+            "enum": [
+              "ready_for_build",
+              "blocked"
+            ]
+          },
+          "claim_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true,
+            "minItems": 1
+          },
+          "statements": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "recommended_text": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "evidence_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "uniqueItems": true,
+                  "minItems": 1
+                },
+                "scope": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "constraints": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "uniqueItems": true
+                }
+              },
+              "required": [
+                "id",
+                "recommended_text",
+                "evidence_ids",
+                "scope",
+                "constraints"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "diagram_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "constraints": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "required_changes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "diagram_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "instructions": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "uniqueItems": true,
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "diagram_id",
+                "instructions"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "blocking_claim_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "blocking_diagram_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "scope",
+          "readiness",
+          "claim_ids",
+          "statements",
+          "diagram_ids",
+          "constraints",
+          "required_changes",
+          "blocking_claim_ids",
+          "blocking_diagram_ids"
+        ],
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "readiness": {
+                  "const": "blocked"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "statements": {
+                  "maxItems": 0
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "statements": {
+                  "minItems": 1
+                },
+                "blocking_claim_ids": {
+                  "maxItems": 0
+                },
+                "blocking_diagram_ids": {
+                  "maxItems": 0
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "diagram_reviews": {
+      "type": "array",
+      "items": {
+        "$ref": "review.schema.json#/$defs/diagram_review"
+      }
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "$ref": "review.schema.json#/$defs/evidence"
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "source_ref",
+    "extraction_id",
+    "review_id",
+    "reviewed_at",
+    "status",
+    "provenance",
+    "requires_publication_approval",
+    "knowledge_points",
+    "topics",
+    "diagram_reviews",
+    "references"
+  ],
+  "additionalProperties": false
+}

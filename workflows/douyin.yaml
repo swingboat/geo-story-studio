@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "id": "douyin-video",
+  "version": "0.2.0",
+  "platform": "douyin",
+  "execution": "local_assisted",
+  "steps": [
+    {"id": "verify_review", "kind": "validation"},
+    {"id": "write_script", "kind": "skill", "skill": "douyin-build"},
+    {"id": "design_storyboard", "kind": "render"},
+    {"id": "preview_storyboard", "kind": "local_preview"},
+    {"id": "review_storyboard", "kind": "editorial_review"},
+    {"id": "produce_audio", "kind": "audio", "implemented": false, "depends_on": ["review_storyboard"]},
+    {"id": "animate", "kind": "animation", "implemented": true, "depends_on": ["review_storyboard"]},
+    {"id": "render_video", "kind": "video_render", "implemented": true, "depends_on": ["animate"], "silent_draft_allowed": true},
+    {"id": "review_video", "kind": "final_review", "implemented": false},
+    {"id": "approve", "kind": "human_approval", "required": true},
+    {"id": "publish", "kind": "external_publish", "skill": "douyin-publish", "implemented": false, "requires": "approve"}
+  ]
+}

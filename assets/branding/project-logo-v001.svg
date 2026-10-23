@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="720" viewBox="0 0 400 120" role="img" aria-labelledby="logo-title"><title id="logo-title">地理故事工坊 · GEO STORY STUDIO 完整品牌标识</title><rect width="400" height="120" fill="#102735" /><svg width="360" height="96" viewBox="0 0 360 96" role="img" aria-labelledby="brand-title brand-desc" x="20" y="12">
+  <title id="brand-title">地理故事工坊 · Geo Story Studio</title>
+  <desc id="brand-desc">翻开的书托起地球，书页延伸成暖金轨道；地理故事字标旁以工坊印记点题。</desc>
+  <defs>
+    <radialGradient id="brand-ocean" cx=".28" cy=".24">
+      <stop stop-color="#a2e0df" />
+      <stop offset=".55" stop-color="#55b6c7" />
+      <stop offset="1" stop-color="#2d6f8c" />
+    </radialGradient>
+    <linearGradient id="brand-pages" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#fff3cd" />
+      <stop offset="1" stop-color="#e9bf75" />
+    </linearGradient>
+    <clipPath id="brand-globe-clip"><circle cx="48" cy="33" r="24" /></clipPath>
+  </defs>
+  <g id="brand-symbol" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 13 66 C 1 43 18 11 45 7 C 68 3 86 14 92 30" fill="none" stroke="#f5ca78" stroke-width="2.4" />
+    <circle cx="92" cy="30" r="3.4" fill="#f5ca78" />
+    <circle cx="48" cy="33" r="24" fill="url(#brand-ocean)" />
+    <g clip-path="url(#brand-globe-clip)" fill="#a6cda1">
+      <path d="M 26 19 L 35 14 L 45 17 L 47 23 L 56 22 L 64 28 L 60 36 L 53 37 L 51 45 L 43 41 L 37 44 L 32 35 L 26 32 Z" />
+      <path d="M 47 42 L 57 41 L 61 48 L 54 58 L 48 56 L 44 49 Z" />
+      <path d="M 66 43 L 75 46 L 75 55 L 66 55 L 62 50 Z" />
+    </g>
+    <path d="M 32 20 C 36 15 41 12 47 11" fill="none" stroke="#f0fbef" stroke-width="1.5" opacity=".75" />
+    <circle cx="48" cy="33" r="23.7" fill="none" stroke="#d4efdd" stroke-width=".8" opacity=".7" />
+    <path d="M 7 62 C 20 57 34 59 48 69 C 62 59 77 57 89 62 L 89 82 C 75 78 60 81 48 90 C 34 81 21 78 7 82 Z" fill="#1a4055" stroke="#f5ca78" stroke-width="2" />
+    <path d="M 10 57 C 24 54 36 58 48 67 L 48 85 C 35 77 22 74 10 77 Z" fill="#f8edcf" />
+    <path d="M 48 67 C 61 58 74 54 86 57 L 86 77 C 73 74 60 77 48 85 Z" fill="url(#brand-pages)" />
+    <path d="M 17 64 C 28 64 37 68 43 72 M 17 70 C 27 70 35 73 43 77" fill="none" stroke="#bfa676" stroke-width="1.1" />
+    <path d="M 55 72 C 65 66 73 64 81 64 M 55 77 C 63 73 72 70 81 70" fill="none" stroke="#b99964" stroke-width="1.1" />
+    <path d="M 48 67 V 85" fill="none" stroke="#b8955e" stroke-width="1.3" />
+  </g>
+  <g id="brand-wordmark" font-family="PingFang SC,Hiragino Sans GB,Heiti SC,sans-serif">
+    <text x="108" y="44" font-size="36" font-weight="600" letter-spacing="1.3"><tspan fill="#f5ca78">地理</tspan><tspan fill="#f4eedc">故事</tspan></text>
+    <path d="M 270 14 H 326 L 337 25 V 54 H 270 Z" fill="#f5ca78" />
+    <path d="M 326 14 V 25 H 337" fill="none" stroke="#9e752e" stroke-width="1.2" opacity=".6" />
+    <text x="303" y="43" font-size="23" font-weight="600" fill="#102735" text-anchor="middle">工坊</text>
+    <text x="109" y="75" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="500" letter-spacing="3.1" fill="#a9c4cb">GEO STORY STUDIO</text>
+    <path d="M 109 86 H 156" fill="none" stroke="#f5ca78" stroke-width="1.4" />
+    <circle cx="160" cy="86" r="1.8" fill="#f5ca78" />
+  </g>
+</svg></svg>

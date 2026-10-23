@@ -1,0 +1,239 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Awaiting-approval article build manifest",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "build_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "build_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "platform": {
+      "const": "toutiao"
+    },
+    "source_ref": {
+      "$ref": "../../sources/schemas/source-manifest.schema.json#/$defs/source_ref"
+    },
+    "review_ref": {
+      "type": "object",
+      "properties": {
+        "review_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "extraction_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "topic_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "material_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "material_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "review_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "review_id",
+        "extraction_id",
+        "topic_id",
+        "material_path",
+        "material_sha256",
+        "review_sha256"
+      ],
+      "additionalProperties": false
+    },
+    "skill": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "const": "toutiao-build"
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "instructions_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "script_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "asset_hashes": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        },
+        "reference_hashes": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        }
+      },
+      "required": [
+        "name",
+        "version",
+        "instructions_sha256",
+        "script_sha256",
+        "asset_hashes"
+      ],
+      "additionalProperties": false
+    },
+    "workflow_ref": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "path",
+        "id",
+        "version",
+        "sha256"
+      ],
+      "additionalProperties": false
+    },
+    "recipe_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "size_bytes": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "path",
+          "sha256",
+          "size_bytes"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "status": {
+      "const": "awaiting_approval"
+    },
+    "requires_publication_approval": {
+      "const": true
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "audience": {
+          "type": "string",
+          "minLength": 1
+        },
+        "format": {
+          "const": "article"
+        },
+        "body_chinese_characters": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "figure_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "renderer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "raster_width": {
+          "const": 1440
+        },
+        "fonts": {
+          "const": "system_fallback"
+        }
+      },
+      "required": [
+        "audience",
+        "format",
+        "body_chinese_characters",
+        "figure_count",
+        "renderer",
+        "raster_width",
+        "fonts"
+      ],
+      "additionalProperties": false
+    },
+    "approval_subject_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  },
+  "required": [
+    "schema_version",
+    "build_id",
+    "build_version",
+    "platform",
+    "source_ref",
+    "review_ref",
+    "skill",
+    "workflow_ref",
+    "recipe_sha256",
+    "artifacts",
+    "status",
+    "requires_publication_approval",
+    "created_at",
+    "title",
+    "parameters",
+    "approval_subject_sha256"
+  ],
+  "additionalProperties": false
+}

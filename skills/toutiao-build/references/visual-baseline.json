@@ -1,0 +1,41 @@
+{
+  "id": "toutiao-visual-2026-10-16",
+  "basis": {
+    "build_id": "toutiao-meteor-journey",
+    "build_version": "v005",
+    "approval_subject_sha256": "2b18a76c2a7b0f217c08e1545b029c37738a2a7c6aafec821e6210b8e4731d23"
+  },
+  "feedback": {
+    "scope": "visual_design_reference_only",
+    "note": "用户对v005视觉效果给出正向反馈；不构成发布Approve。"
+  },
+  "examples": [
+    {
+      "id": "cover-reference",
+      "svg": "../assets/cover-reference.svg",
+      "svg_sha256": "917c08124743acf54bfb3ec003cc6ae87bdf765dce7d19e8d7bb35cccac3ad25",
+      "preview": "../assets/cover-reference.png",
+      "preview_sha256": "b0526eb447ba41d44aa268723cbe99ebfa34385e8eee223ce2fa5e78064c7145"
+    },
+    {
+      "id": "scene-process-reference",
+      "svg": "../assets/scene-process-reference.svg",
+      "svg_sha256": "76544ef8086e94dbd7e0e5d5228ef4bab2f7cba98b7a38b57a9fd75b2b82729e",
+      "preview": "../assets/scene-process-reference.png",
+      "preview_sha256": "72ecf52c26e2923e157dcc0b3d5536c4548f85c2daa323569629b62d5e22cac4"
+    }
+  ],
+  "illustration_credit": "Geo Story Studio（AI辅助排版与示意绘图）",
+  "embedded_photograph": {
+    "used_in": "cover-reference.svg",
+    "credit": "NASA/Bill Ingalls",
+    "source_url": "https://www.nasa.gov/image-article/behold-perseid-meteor-shower/",
+    "media_url": "https://www.nasa.gov/wp-content/uploads/2023/03/51371961714_97a3fd9923_o.jpeg",
+    "rights_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+    "source_review_carried_forward_from": "toutiao-meteor-journey/v004/recipe.json",
+    "reviewed_on": "2026-10-16",
+    "usage_scope": "事实性、非促销科普；保留摄影署名，不暗示来源机构审核或背书；具体使用条件沿用已记录的素材核对范围，用途变化时重新核验。",
+    "adaptation": "原始摄影与自制陨石示意并置、叠加遮罩和文字，不代表同一次事件。"
+  },
+  "reuse": "示例为可编辑的视觉参考；新的题材使用自己的已审校表述、素材记录和图解条件。"
+}
